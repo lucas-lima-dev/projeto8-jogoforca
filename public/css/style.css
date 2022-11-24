@@ -69,6 +69,11 @@ line-height: 68px;
 
 .container-letras {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: 260px;
+  width: 664px;
+height: 91px;
+gap: 11px;
   
 }
 
