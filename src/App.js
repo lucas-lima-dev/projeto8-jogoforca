@@ -3,10 +3,11 @@ import Jogo from "./components/jogo";
 import Letras from "./components/letras";
 
 function App() {
+  
   return (
     <>
     <Jogo/>
-    <Letras/>
+     <Letras/>
     <Chute/>
     </>
   );

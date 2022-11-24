@@ -5,6 +5,7 @@ export default function Jogo(props) {
             <div className="forca">
                 <img src="assets/forca0.png" alt="">
                 </img>
+                
             </div>
             <div className="box-escolherPalavra">
                 
