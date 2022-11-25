@@ -1,51 +1,28 @@
-export default function Letras() {
-  const letras = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
+export default function Letras({palavraSorteada,setPalavraSorteada}) {
+    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+  //Ao clicar em qualquer letra para chutar:
+  //SE a letra clicada.includes(array de letras da palavra sorteada) 
+  //troque o _ pela letra clicada onde tiver na posiçao da palavra sorteada 
+  //SENAO
+  //mostre a proxima imagem da forca
+  function checarLetra() {
+
+
+  }
+
   return (
     <div className="container-letras">
-        {letras.map((letra) => <Letra letra={letra}/>)}
-
-       {/* {letras.map((letra) => (
-        <div className="box-letras">
-          <p>{letra}</p>
-        </div>
-      ))}  */}
-      
+        {alfabeto.map((letra) => <Letra letra={letra}/>)}
     </div>
   );
 }
 
 
-function Letra (props) {
+function Letra ({letra}) {
     return (
         <div className="box-letras">
-            <p>{props.letra}</p>
+            <p>{letra.toUpperCase()}</p>
         </div>
     )
 } 
