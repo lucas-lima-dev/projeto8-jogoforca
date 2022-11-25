@@ -24,8 +24,8 @@ export default function Chute({chute,setChute}) {
     return (
         <div className="container-chute">
             <p>Já sei a palavra!</p>
-            <input value={chute} onChange={pegarChute}></input>
-            <button>
+            <input value={chute} onChange={pegarChute} data-test ="guess-input"></input>
+            <button data-test ="guess-button">
                 Chutar
             </button>
 

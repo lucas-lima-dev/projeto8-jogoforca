@@ -13,7 +13,7 @@ export default function Letras({palavraSorteada,setPalavraSorteada}) {
 
   return (
     <div className="container-letras">
-        {alfabeto.map((letra) => <Letra letra={letra}/>)}
+        {alfabeto.map((letra) => <Letra key={alfabeto} letra={letra}/>)}
     </div>
   );
 }
@@ -21,7 +21,7 @@ export default function Letras({palavraSorteada,setPalavraSorteada}) {
 
 function Letra ({letra}) {
     return (
-        <div className="box-letras">
+        <div className="box-letras" data-test ="letter">
             <p>{letra.toUpperCase()}</p>
         </div>
     )

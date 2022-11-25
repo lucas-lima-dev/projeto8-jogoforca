@@ -6,8 +6,10 @@ export default function Jogo({tentativas,setTentativas,palavras,palavraSorteada,
     
     
     function sortearPalavras() {
-        // palavraSorteada = funcao para sortear a (palavras)
+        palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
+        
         //transformar a palavraSorteada em um array de letras
+        setPalavraSorteada(palavraSorteada.split(""))
         //trocar cada letra por _
         //mostrar na tela
     }
@@ -20,18 +22,18 @@ export default function Jogo({tentativas,setTentativas,palavras,palavraSorteada,
         
         <div className="container-forca">
             <div className="forca">
-                <img src={`assets/forca${tentativas}.png`} alt="">
+                <img src={`assets/forca${tentativas}.png`} alt="" data-test ="game-image">
                 {/* <img src={`assets/forca${tentativa}`} alt="forca0.png"> */}
                 </img>
 
             </div>
             <div className="box-escolherPalavra">
                 
-                <div  onClick ={sortearPalavras} className="escolherPalavra">
+                <div  onClick ={sortearPalavras} className="escolherPalavra" data-test = "choose-word">
                 <p>Escolher Palavra</p>
                 </div>
                 <div className="mostrarLetras">
-                <p>_ _ _ _ _ _ _ _ _ _ _ _</p>
+                <p data-test ="word">{palavraSorteada}</p>
                 </div>
             </div>
         </div>
