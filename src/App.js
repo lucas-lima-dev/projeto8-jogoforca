@@ -4,27 +4,38 @@ import Jogo from "./components/jogo";
 import Letras from "./components/letras";
 import palavras from "./palavras";
 
+
+let palavraSorteada
+
+
+
 function App() {
   const [tentativas,setTentativas] = useState(0)
-  const [chute,setChute] = useState("")
+  const [chutePalavra,setChutePalavra] = useState("")
   const [palavraSorteada,setPalavraSorteada] = useState("")
+  const [letraClicada, setLetraClicada] = useState([]);
+
+  
+
   
   return (
     <>
     <Jogo 
+    palavras={palavras}
     tentativas={tentativas} 
     setTentativas={setTentativas} 
-    palavras={palavras}
     palavraSorteada={palavraSorteada}
     setPalavraSorteada={setPalavraSorteada}
     />
     <Letras
     palavraSorteada={palavraSorteada}
     setPalavraSorteada={setPalavraSorteada}
+    letraClicada={letraClicada}
+    setLetraClicada={setLetraClicada}
     />
     <Chute 
-    chute={chute} 
-    setChute={setChute}
+    chutePalavra={chutePalavra} 
+    setChutePalavra={setChutePalavra}
     palavraSorteada={palavraSorteada}
     setPalavraSorteada={setPalavraSorteada}
     />

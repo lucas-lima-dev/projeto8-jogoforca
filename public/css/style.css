@@ -106,6 +106,32 @@
   line-height: 19px;
 }
 
+.botao-letras {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: #9faab5;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+
+  color: #798a9f;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.selecionada {
+  color:#39739D;
+  background:#E1ECF4;
+}
+
 .container-chute {
   display: flex;
   justify-content: center;

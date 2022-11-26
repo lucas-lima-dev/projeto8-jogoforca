@@ -7,10 +7,12 @@ export default function Jogo({tentativas,setTentativas,palavras,palavraSorteada,
     
     function sortearPalavras() {
         palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
-        
         //transformar a palavraSorteada em um array de letras
-        setPalavraSorteada(palavraSorteada.split(""))
+        const letrasPalavraSorteada = palavraSorteada.split("")
+    
+        // setPalavraSorteada(letrasPalavraSorteada)
         //trocar cada letra por _
+        setPalavraSorteada(letrasPalavraSorteada.map(()=>"_").join(" "))
         //mostrar na tela
     }
 
