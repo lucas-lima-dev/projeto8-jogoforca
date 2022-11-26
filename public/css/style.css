@@ -110,11 +110,9 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background: #9faab5;
-  border: 1px solid #7aa7c7;
+  
   border-radius: 3px;
 
-  color: #798a9f;
   width: 40px;
   height: 40px;
   display: flex;
@@ -125,11 +123,13 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-}
-
-.selecionada {
   color:#39739D;
   background:#E1ECF4;
+}
+
+.botao-letras:disabled {
+  background: #9faab5;
+  color: #798a9f;
 }
 
 .container-chute {

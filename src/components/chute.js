@@ -1,4 +1,4 @@
-export default function Chute({chutePalavra,setChutePalavra}) {
+export default function Chute({chutePalavra,setChutePalavra,jogoIniciado}) {
 
     // Ao clicar no botao chutar:
     //Pegar a palavra digita 
@@ -24,11 +24,18 @@ export default function Chute({chutePalavra,setChutePalavra}) {
     return (
         <div className="container-chute">
             <p>Já sei a palavra!</p>
-            <input value={chutePalavra} onChange={pegarChute} data-test ="guess-input"></input>
-            <button data-test ="guess-button">
+            <input 
+                value={chutePalavra} 
+                onChange={pegarChute} 
+                data-test ="guess-input"
+            >
+            </input>
+            <button 
+                disabled={!jogoIniciado}
+                data-test ="guess-button"
+            >
                 Chutar
             </button>
-
         </div>
     )
 }

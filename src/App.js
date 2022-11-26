@@ -5,39 +5,52 @@ import Letras from "./components/letras";
 import palavras from "./palavras";
 
 
-let palavraSorteada
+let palavraSorteada 
 
 
 
 function App() {
-  const [tentativas,setTentativas] = useState(0)
+  const [erros,setErros] = useState(0)
   const [chutePalavra,setChutePalavra] = useState("")
-  const [palavraSorteada,setPalavraSorteada] = useState("")
+  const [palavraMostrada,setPalavraMostrada] = useState("")
   const [letraClicada, setLetraClicada] = useState([]);
+  const [jogoIniciado,setJogoIniciado] = useState(false)
 
-  
+  function sortearPalavras() {
+    
+    palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
+
+    //transformar a palavraSorteada em um array de letras
+    const letrasPalavraSorteada = palavraSorteada.split("")
+    //trocar cada letra por _
+    
+    //mostrar na tela
+    setPalavraMostrada(letrasPalavraSorteada.map(()=>"_").join(" "))
+    setJogoIniciado(true)
+}
 
   
   return (
     <>
     <Jogo 
     palavras={palavras}
-    tentativas={tentativas} 
-    setTentativas={setTentativas} 
-    palavraSorteada={palavraSorteada}
-    setPalavraSorteada={setPalavraSorteada}
+    erros={erros} 
+    palavraMostrada={palavraMostrada}
+    sortearPalavras={sortearPalavras}
     />
     <Letras
-    palavraSorteada={palavraSorteada}
-    setPalavraSorteada={setPalavraSorteada}
+    palavraMostrada={palavraMostrada}
+    setPalavraMostrada={setPalavraMostrada}
     letraClicada={letraClicada}
     setLetraClicada={setLetraClicada}
+    jogoIniciado={jogoIniciado}
     />
     <Chute 
     chutePalavra={chutePalavra} 
     setChutePalavra={setChutePalavra}
-    palavraSorteada={palavraSorteada}
-    setPalavraSorteada={setPalavraSorteada}
+    palavraMostrada={palavraMostrada}
+    setPalavraMostrada={setPalavraMostrada}
+    jogoIniciado={jogoIniciado}
     />
     </>
   );

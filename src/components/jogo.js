@@ -1,31 +1,17 @@
 
 
-export default function Jogo({tentativas,setTentativas,palavras,palavraSorteada,setPalavraSorteada}) {
-    
-
-    
-    
-    function sortearPalavras() {
-        palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
-        //transformar a palavraSorteada em um array de letras
-        const letrasPalavraSorteada = palavraSorteada.split("")
-    
-        // setPalavraSorteada(letrasPalavraSorteada)
-        //trocar cada letra por _
-        setPalavraSorteada(letrasPalavraSorteada.map(()=>"_").join(" "))
-        //mostrar na tela
-    }
-
-    function addPalavra() {
-
-    }
+export default function Jogo({
+    erros,
+    palavraMostrada,
+    sortearPalavras
+    }) {
 
     return (
         
         <div className="container-forca">
             <div className="forca">
-                <img src={`assets/forca${tentativas}.png`} alt="" data-test ="game-image">
-                {/* <img src={`assets/forca${tentativa}`} alt="forca0.png"> */}
+                <img src={`assets/forca${erros}.png`} alt="" data-test ="game-image">
+                
                 </img>
 
             </div>
@@ -35,11 +21,9 @@ export default function Jogo({tentativas,setTentativas,palavras,palavraSorteada,
                 <p>Escolher Palavra</p>
                 </div>
                 <div className="mostrarLetras">
-                <p data-test ="word">{palavraSorteada}</p>
+                <p data-test ="word">{palavraMostrada}</p>
                 </div>
             </div>
         </div>
     )
-
-        
 }

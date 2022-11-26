@@ -1,4 +1,12 @@
-export default function Letras({palavraSorteada,setPalavraSorteada,letraClicada,setLetraClicada}) {
+export default function Letras({
+    palavraMostrada,
+    setPalavraMostrada,
+    letraClicada,
+    setLetraClicada,
+    jogoIniciado,
+    setJogoIniciado
+    }) {
+
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
   return (
@@ -9,13 +17,14 @@ export default function Letras({palavraSorteada,setPalavraSorteada,letraClicada,
                 letra={letra} 
                 letraClicada={letraClicada} 
                 setLetraClicada={setLetraClicada}
+                jogoIniciado={jogoIniciado}
             />)}
     </div>
   );
 }
 
 
-function Letra ({letra,letraClicada,setLetraClicada}) {
+function Letra ({letra,letraClicada,setLetraClicada,jogoIniciado,setJogoIniciado}) {
 //Ao clicar em qualquer letra para chutar:
   //SE a letra clicada.includes(array de letras da palavra sorteada) 
   //troque o _ pela letra clicada onde tiver na posiçao da palavra sorteada 
@@ -28,17 +37,14 @@ function Letra ({letra,letraClicada,setLetraClicada}) {
         if(!estaNaLista) {
             setLetraClicada([...letraClicada,letraSelecionada])
         }
-
+        
     }
 
     return (
-        // <div className={`box-letras`} data-test ="letter">
-        //     <p>{letra.toUpperCase()}</p>
-        // </div>
+        
         <button 
-            className={`botao-letras ${
-                letraClicada.includes(letra) ? "selecionada" : ""
-            }`} 
+            disabled={!jogoIniciado || letraClicada.includes(letra)}
+            className={`botao-letras`} 
             onClick={()=>clicouLetra(letra)}
             
             data-test ="letter"
