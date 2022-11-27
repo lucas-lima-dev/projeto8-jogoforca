@@ -3,7 +3,8 @@
 export default function Jogo({
     erros,
     palavraMostrada,
-    sortearPalavras
+    sortearPalavras,
+    corGanhou
     }) {
 
     return (
@@ -21,7 +22,7 @@ export default function Jogo({
                 <p>Escolher Palavra</p>
                 </div>
                 <div className="mostrarLetras">
-                <p data-test ="word">{palavraMostrada}</p>
+                <p className={corGanhou} data-test ="word">{palavraMostrada}</p>
                 </div>
             </div>
         </div>

@@ -1,10 +1,8 @@
 export default function Letras({
-    palavraMostrada,
-    setPalavraMostrada,
     letraClicada,
     setLetraClicada,
     jogoIniciado,
-    setJogoIniciado
+    verificarErros
     }) {
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -18,26 +16,18 @@ export default function Letras({
                 letraClicada={letraClicada} 
                 setLetraClicada={setLetraClicada}
                 jogoIniciado={jogoIniciado}
+                verificarErros={verificarErros}
             />)}
     </div>
   );
 }
 
 
-function Letra ({letra,letraClicada,setLetraClicada,jogoIniciado,setJogoIniciado}) {
-//Ao clicar em qualquer letra para chutar:
-  //SE a letra clicada.includes(array de letras da palavra sorteada) 
-  //troque o _ pela letra clicada onde tiver na posiçao da palavra sorteada 
-  //SENAO
-  //mostre a proxima imagem da forca
+function Letra ({letra,letraClicada,setLetraClicada,jogoIniciado,verificarErros}) {
 
-    function clicouLetra(letraSelecionada) {
-        const estaNaLista = letraClicada.includes(letraSelecionada)
-
-        if(!estaNaLista) {
-            setLetraClicada([...letraClicada,letraSelecionada])
-        }
-        
+    function lidarCliqueLetra(letra) {
+        setLetraClicada([...letraClicada,letra])
+        verificarErros(letra)
     }
 
     return (
@@ -45,7 +35,7 @@ function Letra ({letra,letraClicada,setLetraClicada,jogoIniciado,setJogoIniciado
         <button 
             disabled={!jogoIniciado || letraClicada.includes(letra)}
             className={`botao-letras`} 
-            onClick={()=>clicouLetra(letra)}
+            onClick={()=>lidarCliqueLetra(letra)}
             
             data-test ="letter"
         >

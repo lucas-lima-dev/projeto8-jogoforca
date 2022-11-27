@@ -176,10 +176,10 @@
   border-radius: 3px;
 }
 
-.ganhou {
-  color: #27AE60;
+p.ganhou {
+  color: #27AE60!important;
 }
 
-.perdeu {
-  color: #FF0000;
+p.perdeu {
+  color: #FF0000!important;
 }
