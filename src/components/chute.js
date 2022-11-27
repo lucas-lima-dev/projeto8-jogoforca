@@ -19,6 +19,7 @@ export default function Chute({chutePalavra,setChutePalavra,jogoIniciado,verific
         <div className="container-chute">
             <p>Já sei a palavra!</p>
             <input 
+                disabled={!jogoIniciado}
                 value={chutePalavra} 
                 onChange={pegarChute} 
                 data-test ="guess-input"
