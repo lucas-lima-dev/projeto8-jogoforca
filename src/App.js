@@ -42,6 +42,10 @@ function App() {
    }
 
   function sortearPalavras() {
+    setJogoIniciado(true)
+    setErros(0)
+    setCorGanhou("")
+    setLetraClicada([])
     
     palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
 
@@ -51,7 +55,12 @@ function App() {
     
     //mostrar na tela
     setPalavraMostrada(letrasPalavraSorteada.map(()=>"_").join(" "))
-    setJogoIniciado(true)
+    
+
+    // if((!palavraMostrada.includes("_")) || (erros===6)) {
+    //   setPalavraMostrada(palavraSorteada)
+    //   setJogoIniciado(true)
+    // }
 }
 
   function verificarErros(letra) {

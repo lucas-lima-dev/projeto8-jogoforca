@@ -38,6 +38,8 @@
   align-items: flex-end;
   justify-content: right;
 }
+
+
 .container-forca .box-escolherPalavra .escolherPalavra {
   width: 200px;
   height: 60px;
@@ -73,6 +75,14 @@
   font-weight: 700;
   font-size: 50px;
   line-height: 68px;
+}
+
+.container-forca .box-escolherPalavra .mostrarLetras p.ganhou {
+  color: #27AE60;
+}
+
+.container-forca .box-escolherPalavra .mostrarLetras p.perdeu {
+  color: #FF0000;
 }
 
 .container-letras {
@@ -176,10 +186,10 @@
   border-radius: 3px;
 }
 
-p.ganhou {
+/* p.ganhou {
   color: #27AE60!important;
-}
+} */
 
-p.perdeu {
+/* p.perdeu {
   color: #FF0000!important;
-}
+} */
