@@ -5,7 +5,7 @@ import Letras from "./components/letras";
 import palavras from "./palavras";
 
 
-let palavraSorteada 
+let palavraSorteada = ""
 
 function App() {
   const [erros,setErros] = useState(0)
@@ -14,6 +14,7 @@ function App() {
   const [letraClicada, setLetraClicada] = useState([]);
   const [jogoIniciado,setJogoIniciado] = useState(false)
   const [corGanhou,setCorGanhou] = useState("")
+  
   
 
    if(jogoIniciado) {
@@ -35,9 +36,11 @@ function App() {
       setErros(6)
       setPalavraMostrada(palavraSorteada)
       setCorGanhou("perdeu")
+      setChutePalavra("")
     }else {
       setPalavraMostrada(palavraSorteada)
       setCorGanhou("ganhou")
+      setChutePalavra("")
     }
    }
 
@@ -46,6 +49,7 @@ function App() {
     setErros(0)
     setCorGanhou("")
     setLetraClicada([])
+    setChutePalavra("")
     
     palavraSorteada = palavras[Math.floor(Math.random()*palavras.length)]
 
@@ -57,10 +61,6 @@ function App() {
     setPalavraMostrada(letrasPalavraSorteada.map(()=>"_").join(" "))
     
 
-    // if((!palavraMostrada.includes("_")) || (erros===6)) {
-    //   setPalavraMostrada(palavraSorteada)
-    //   setJogoIniciado(true)
-    // }
 }
 
   function verificarErros(letra) {
@@ -98,6 +98,7 @@ function App() {
     palavraMostrada={palavraMostrada}
     sortearPalavras={sortearPalavras}
     corGanhou={corGanhou}
+    palavraSorteada={palavraSorteada}
     />
     <Letras
     letraClicada={letraClicada}
